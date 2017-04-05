@@ -1,0 +1,20 @@
+---
+id: sinatra
+kind: Pod
+apiVersion: v1beta1
+desiredState:
+  manifest:
+    version: v1beta1
+    id: sinatra
+    containers:
+    - name: sinatra
+      image: lude/hello-world
+      cpu: 100
+      ports:
+      - name: sinatra
+        containerPort: 4567
+labels:
+  name: sinatra
+  role: web
+
+

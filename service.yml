@@ -1,0 +1,23 @@
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: hello-world 
+  namespace: default
+  labels:
+    dns: route53
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-ssl-cert: arn:aws:iam::602688267222:server-certificate/wildcard-handy-internal-com
+    service.beta.kubernetes.io/aws-load-balancer-backend-protocol: http
+    domainName: dolsen-hello-world.handy-internal.com
+spec:
+  selector:
+    app: hello-world
+  type: LoadBalancer
+  loadBalancerSourceRanges:
+    - 0.0.0.0/0
+  ports:
+    - protocol: TCP
+      port: 443
+      name: http-port
+      targetPort: 4567
