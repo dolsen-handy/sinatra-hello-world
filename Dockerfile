@@ -8,4 +8,4 @@ RUN bundle install
 
 EXPOSE 4567
 
-CMD ["/usr/local/bin/bundle", "exec", "ruby", "app.rb"]
+CMD ["/usr/local/bin/bundle", "exec", "ruby", "app.rb", "-o", "0.0.0.0"]
