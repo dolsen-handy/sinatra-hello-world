@@ -3,7 +3,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: hello-world 
-  namespace: default
+  namespace: officehours
   labels:
     dns: route53
   annotations:
