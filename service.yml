@@ -2,17 +2,17 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: hello-world 
+  name: sinatra-hello-world 
   namespace: officehours
   labels:
     dns: route53
   annotations:
     service.beta.kubernetes.io/aws-load-balancer-ssl-cert: arn:aws:iam::602688267222:server-certificate/wildcard-handy-internal-com
     service.beta.kubernetes.io/aws-load-balancer-backend-protocol: http
-    domainName: dolsen-hello-world.handy-internal.com
+    domainName: dolsen-hw.handy-internal.com
 spec:
   selector:
-    app: hello-world
+    app: sinatra-hello-world
   type: LoadBalancer
   loadBalancerSourceRanges:
     - 0.0.0.0/0
