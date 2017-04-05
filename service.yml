@@ -2,7 +2,7 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: sinatra-hello-world 
+  name: hello-world-sinatra 
   namespace: officehours
   labels:
     dns: route53
@@ -12,7 +12,7 @@ metadata:
     domainName: dolsen-hw.handy-internal.com
 spec:
   selector:
-    app: sinatra-hello-world
+    app: hello-world-sinatra
   type: LoadBalancer
   loadBalancerSourceRanges:
     - 0.0.0.0/0
